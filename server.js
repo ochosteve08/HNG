@@ -1,11 +1,10 @@
 const express = require("express");
-
 const app = express();
 app.use(express.json());
 port = 3500;
 
 app.get("", (req, res) => {
-  res.json({ message: "api is working" });
+  res.json({ message: "endpoint is working" });
 });
 
 app.get("/api", (req, res) => {
@@ -17,14 +16,15 @@ app.get("/api", (req, res) => {
       error: "Missing required query parameters",
     });
   }
-
+  const current_day = new Date().toLocaleString("en-US", { weekday: "long" });
+  const utc_time = new Date().toISOString();
   const response = {
-    slack_name: slack_name,
-    current_day: new Date().toLocaleString("en-US", { weekday: "long" }),
-    utc_time: new Date().toISOString(),
-    track: track,
-    github_file_url: `https://github.com/${slack_name}/hngx-be/blob/main/s-1/app.js`,
-    github_repo_url: `https://github.com/${slack_name}/hngx-be`,
+    slack_name,
+    current_day,
+    utc_time,
+    track,
+    github_file_url: "https://github.com/ochosteve08/HNG/blob/main/server.js",
+    github_repo_url: "https://github.com/ochosteve08/HNG",
     status_code: 200,
   };
 
@@ -32,9 +32,6 @@ app.get("/api", (req, res) => {
   res.status(200).json(response);
 });
 
-
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
-
-
