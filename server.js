@@ -17,7 +17,8 @@ app.get("/api", (req, res) => {
     });
   }
   const current_day = new Date().toLocaleString("en-US", { weekday: "long" });
-  const utc_time = new Date().toISOString();
+  //   const utc_time = new Date().toISOString();
+  const utc_time = new Date().toISOString().slice(0, -5) + "Z";
   const response = {
     slack_name,
     current_day,
