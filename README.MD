@@ -67,7 +67,7 @@ http://localhost:3500/api
      }
      ```
 2. **Read a Person**
-3. - **Method**: `GET`
+ - **Method**: `GET`
    - **Route**: `/api/:userId`
    - **Response**:
      ```json
@@ -77,7 +77,7 @@ http://localhost:3500/api
          "__v": 0
      }
      ```
-4. **Update a Person**
+3. **Update a Person**
 
    - **Method**: `PUT`
    - **Route**: `/api/:userId`
@@ -93,7 +93,7 @@ http://localhost:3500/api
          "__v": 0
      }
      ```
-5. **Delete a Person**
+4. **Delete a Person**
 
    - **Method**: `DELETE`
    - **Route**: `/api/:userId`
