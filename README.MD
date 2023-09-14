@@ -1,4 +1,3 @@
-
 Certainly! Below is a structured `README.md` template for the CRUD API you've developed using Node.js, Express, and MongoDB:
 
 ---
@@ -21,8 +20,8 @@ This API allows for the basic CRUD (Create, Read, Update, Delete) operations on 
 1. **Clone the Repository**
 
    ```bash
-   git clone [YOUR_GITHUB_REPO_LINK]
-   cd [REPO_NAME]
+   git clone [https://github.com/ochosteve08/HNG.git]
+
    ```
 2. **Install Dependencies**
 
@@ -34,57 +33,20 @@ This API allows for the basic CRUD (Create, Read, Update, Delete) operations on 
    Rename `.env.example` to `.env` and update the values:
 
    ```env
-   DB_CONNECTION=YOUR_MONGODB_CONNECTION_STRING
-   PORT=3000
+   MONGO_URI=YOUR_MONGODB_CONNECTION_STRING
+   PORT=3500
    ```
 4. **Run the Server**
 
    ```bash
-   npm start
+   npm run dev
    ```
 
 ### Usage
 
 Once the server is up and running, you can access the API at:
 
-```
-http://localhost:3000/api
-```
-
-### API Endpoints
-
-1. **Add a Person**
-
-   - **Method**: `POST`
-   - **Route**: `/api`
-   - **Request Body**:
-     ```json
-     {
-       "name": "John Doe"
-     }
-     ```
-   - **Response**:
-     ```json
-     {
-       "id": "some_id",
-       "name": "John Doe"
-     }
-     ```
-2. **Read a Person**
-
-   - **Method**: `GET`
-   - **Route**: `/api/:userId`
-   - **Response**:
-     ```json
-     {
-       "id": "some_id",
-       "name": "John Doe"
-     }
-     ```
-
-
-
----
+http://localhost:3500/api
 
 ### API Endpoints
 
@@ -96,20 +58,16 @@ http://localhost:3000/api
      ```json
      {"name":"glorious"}
      ```
-   - **Response**
-
-   {
-
-       "_id": "65025d5e420f620d558be6c0",
-
-       "name": "glorious",
-
-       "__v": 0
-
-   }
-
-   **Read a Person**
-2. - **Method**: `GET`
+   - **Response**:
+     ```json
+     {
+         "name": "glorious",
+         "_id": "650262b5420f620d558be6c4",
+         "__v": 0
+     }
+     ```
+2. **Read a Person**
+3. - **Method**: `GET`
    - **Route**: `/api/:userId`
    - **Response**:
      ```json
@@ -119,24 +77,23 @@ http://localhost:3000/api
          "__v": 0
      }
      ```
-3. **Update a Person**
+4. **Update a Person**
 
    - **Method**: `PUT`
    - **Route**: `/api/:userId`
    - **Request Body**:
      ```json
-     {
-       "name": "Jane Doe"
-     }
+     "name":"mungo park"}
      ```
    - **Response**:
      ```json
      {
-       "_id": "some_id",
-       "name": "Jane Doe"
+         "name": "mungo park",
+         "_id": "650262b5420f620d558be6c4",
+         "__v": 0
      }
      ```
-4. **Delete a Person**
+5. **Delete a Person**
 
    - **Method**: `DELETE`
    - **Route**: `/api/:userId`
@@ -162,9 +119,7 @@ http://localhost:3000/api
    - `404 Not Found`: The requested resource (person) was not found.
    - `500 Internal Server Error`: An unexpected error on the server side.
 
-
 ---
-
 
 ### Testing
 
